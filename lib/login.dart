@@ -12,24 +12,22 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width; // Gives the width
-    double height = MediaQuery.of(context).size.height;
     return const Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
         clipBehavior: Clip.none,
         children: [
-          mainbackground(),
-          Positioned(child: titleimage()),
-          Positioned(top: 330, right: 5, child: blackbox())
+          mainBackground(),
+          Positioned(top: 90, child: titleimage()),
+          Positioned(top: 420, right: 5, child: blackbox())
         ],
       ),
     );
   }
 }
 
-class mainbackground extends StatelessWidget {
-  const mainbackground({
+class mainBackground extends StatelessWidget {
+  const mainBackground({
     super.key,
   });
 
@@ -63,7 +61,7 @@ class blackbox extends StatelessWidget {
     return Center(
       child: Container(
         width: 400,
-        height: 600,
+        height: 440,
         // color: const Color.fromARGB(160, 10, 0, 15).withOpacity(0.6),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
@@ -71,13 +69,16 @@ class blackbox extends StatelessWidget {
         ),
         child: Column(
           children: [
+            SizedBox(
+              height: 50,
+            ),
             const Padding(
               padding: EdgeInsets.all(15.0),
               child: const TextField(
                 decoration: InputDecoration(
                     hintText: "Username",
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20)))),
+                        borderRadius: BorderRadius.all(Radius.circular(35)))),
               ),
             ),
             const Padding(
@@ -86,7 +87,7 @@ class blackbox extends StatelessWidget {
                 decoration: InputDecoration(
                     hintText: "Password",
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20)))),
+                        borderRadius: BorderRadius.all(Radius.circular(35)))),
               ),
             ),
             ElevatedButton(onPressed: () {}, child: const Text("submit")),
